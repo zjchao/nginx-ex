@@ -4,7 +4,7 @@
   "metadata": {
     "name": "nginx-example",
     "annotations": {
-      "openshift.io/display-name": "Nginx HTTP server and a reverse proxy",
+      "openshift.io/display-name": "NginX HTTP server by zjc",
       "description": "An example Nginx HTTP server and a reverse proxy (nginx) application that serves static content. For more information about using this template, including OpenShift considerations, see https://github.com/sclorg/nginx-ex/blob/master/README.md.",
       "tags": "quickstart,nginx",
       "iconClass": "icon-nginx",
@@ -32,8 +32,8 @@
         "ports": [
           {
             "name": "web",
-            "port": 8080,
-            "targetPort": 8080
+            "port": 8081,
+            "targetPort": 8081
           }
         ],
         "selector": {
@@ -175,7 +175,7 @@
                 "image": " ",
                 "ports": [
                   {
-                    "containerPort": 8080
+                    "containerPort": 8081
                   }
                 ],
                 "readinessProbe": {
@@ -183,7 +183,7 @@
                   "initialDelaySeconds": 3,
                   "httpGet": {
                     "path": "/",
-                    "port": 8080
+                    "port": 8081
                   }
                 },
                 "livenessProbe": {
@@ -191,7 +191,7 @@
                     "initialDelaySeconds": 30,
                     "httpGet": {
                         "path": "/",
-                        "port": 8080
+                        "port": 8081
                     }
                 },
                 "env": [
@@ -242,7 +242,7 @@
       "displayName": "Git Repository URL",
       "description": "The URL of the repository with your application source code.",
       "required": true,
-      "value": "https://github.com/sclorg/nginx-ex.git"
+      "value": "https://github.com/zjchao/nginx-ex.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",
